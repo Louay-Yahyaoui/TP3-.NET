@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Search";
+}
+@using (@Html.BeginRouteForm("Search", "Person", FormMethod.Post,false,"Person"))
+{
+    @Html.Label("firstname");
+    @Html.TextBox("firstname");<br/>
+    @Html.Label("country");
+    @Html.TextBox("country");<br/>
+    @Html.Label("Rechercher");
+    <input type="submit">
+}
+@if(ViewBag.Firstname!=null)
+{
+    <b style="color:red">@ViewBag.Firstname from @ViewBag.Country was not found</b>
+}
+
